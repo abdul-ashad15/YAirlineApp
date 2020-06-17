@@ -1,0 +1,197 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Travellers Detail </h4>
+            <hr>
+        </div>
+    </div>
+    <form [formGroup]="TravellersForm" (ngSubmit)="onSubmit()">
+        <div formArrayName="TravellersList">
+            <div class="form-group" *ngFor="let psg of TravellersForm.get('TravellersList')?.controls; let i=index;">
+                <hr *ngIf="i>0">
+                
+                <div [formGroupName]="i">
+                    <div class="form-group">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    First Name
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtFirstName" class="form-control"
+                                        formControlName="FirstName">
+                                </div>
+                                <div class="col-sm-2">
+                                    Surname
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtSurname" class="form-control" formControlName="Surname">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!psg.get('FirstName').valid && psg.get('FirstName').touched">
+                                        <span class="errorMessage">First Name is not valid</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!psg.get('Surname').valid && psg.get('Surname').touched">
+                                        <span class="errorMessage">Surname is not valid</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    Address
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtAddress" class="form-control" formControlName="Address">
+                                </div>
+                                <div class="col-sm-2">
+                                    Passport
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtPassport" class="form-control" formControlName="Passport">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!psg.get('Address').valid && psg.get('Address').touched">
+                                        <span class="errorMessage">Address is not valid<br>Minimum length must be of 25
+                                            letters </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!psg.get('Passport').valid && psg.get('Passport').touched">
+                                        <span class="errorMessage">Passport is not valid</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    Email
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtEmail" class="form-control" formControlName="Email">
+                                </div>
+                                <div class="col-sm-2">
+                                    Contact No
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtContact" class="form-control" formControlName="ContactNo">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!psg.get('Email').valid && psg.get('Email').touched">
+                                        <span class="errorMessage">Email is not valid</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!psg.get('ContactNo').valid && psg.get('ContactNo').touched">
+                                        <span class="errorMessage">Contact number is not valid</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2">Seat</div>
+                                <div class="col-sm-4">
+                                    <!-- {{SelectedSeatList[i]}} -->
+                                    <input type="text" disabled id="txtContact" class="form-control"
+                                        formControlName="Seat">
+                                </div>
+                                <div class="col-sm-2">
+                                    Birth Date
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="date" id="txtBirthDate" class="form-control"
+                                        formControlName="BirthDate" [max]="maxDate">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!psg.get('BirthDate').valid && psg.get('BirthDate').touched">
+                                        <span class="errorMessage">Birth date is not valid</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    Gender
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="radio" *ngFor="let optGender of genders">
+                                        <label>
+                                            <input type="radio" formControlName="Gender" [value]="optGender">
+                                            {{optGender}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <hr>
+                                </div>
+                                <div class="col-sm-2">
+                                  <strong>Ancilliary Service</strong>
+                                </div>
+                                <div class="col-sm-3">
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    Special Meal
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="checkbox" class="checkbox" formControlName="SpecialMeal"> Required
+                                </div>
+                                <div class="col-sm-2">
+                                    WhileChair
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="checkbox" class="checkbox" formControlName="WhileChair"> Required
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10"></div>
+            <div class="col-sm-2">
+                <input type="submit" [disabled]="!(TravellersForm.valid && TravellersForm.touched)" id="btnSubmit"
+                    value="Check In" class="btn btn-primary">
+            </div>
+        </div>
+    </form>
+</div>
+
+zxz

@@ -1,0 +1,24 @@
+input[type=radio]{
+    margin-left: 2px;
+}
+
+.btn{
+    border-radius: 20px;
+    width: 100px;
+}
+
+input[type=checkbox]{
+    margin-top:10px;
+}
+
+.errorMessage{
+    color:red;
+}
+
+input[type="text"]{
+    background-color: white    ;
+}
+
+h4{
+    font-family: 'Times New Roman', Times, serif;
+}

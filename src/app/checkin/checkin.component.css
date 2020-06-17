@@ -1,0 +1,22 @@
+.container{
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.errorMessage{
+    color:red;
+}
+
+h3{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input[type='button']{
+    margin-left: 5px;
+    margin-top: 15px;
+}
+input[type='submit']{
+    margin-left: 5px;
+    margin-top: 15px;
+}

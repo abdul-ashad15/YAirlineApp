@@ -1,0 +1,111 @@
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <H3>Flight Details</H3>
+        </div>
+    </div>
+        <hr>
+    <div class="row">
+        <div class="col-sm-2">
+            Flight Code
+        </div>
+        <div class="col-sm-4">
+            : {{flight.FlightCode}}
+        </div>
+        <div class="col-sm-2">
+            Airline
+        </div>
+        <div class="col-sm-4">
+            : {{flight.Flight}}
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-2">
+            Fare
+        </div>
+        <div class="col-sm-4">
+            : {{flight.FareDetails|currency:'INR':'Rs '}}
+        </div>
+        <div class="col-sm-2">
+            Selected Seat
+        </div>
+        <div id="divSeat" class="col-sm-4" >
+            
+        </div>
+    </div>    
+<br>        
+    <div class="row">
+        <div class="col-sm-2">
+            Departure
+        </div>
+        <div class="col-sm-4">
+            : {{flight.OriginDestination.Origin}}
+        </div>
+        <div class="col-sm-2">
+            Arrival
+        </div>
+        <div class="col-sm-4">
+            : {{flight.OriginDestination.Destination}}
+        </div>
+    </div>    
+        
+    <div class="row">
+        <div class="col-sm-2">
+            Departure Date
+        </div>
+        <div class="col-sm-4">
+            : {{flight.OriginDestination.DeptDate|date:'mediumDate'}}
+        </div>
+        <div class="col-sm-2">
+            Arrival Date
+        </div>
+        <div class="col-sm-4">
+            : {{flight.OriginDestination.ArrDate|date:'mediumDate'}}
+        </div>
+    </div>    
+    
+</div>
+
+            <div class="container seat-allocation">
+                <div class="row">
+                    <div class="col-sm-12"><br><hr>
+                        <strong>Seat Map</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <i class='fas fa-chair' style='color:green'></i>
+                            <font style="font-size:14;color:green">Available</font>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <i class='fas fa-chair' style='color:red'></i>
+                            <font style="font-size:14;color:red">Available</font>
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <i class='fas fa-chair' style='color:blue'></i>
+                            <font style="font-size:14;color:blue">Selected</font>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table" [innerHtml]="rowList | safeHtml" >
+                            
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-9"></div>
+                    <div class="col-sm-3">
+                        <input type="button" class="btn btn-primary" value="Check In" (click)='AddTraveller()' >
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+            </div>

@@ -1,0 +1,67 @@
+<h3>Flight Search</h3>
+<br>
+<form [formGroup]='SearchForm' (ngSubmit)="onSubmit()">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">From</div>
+                <div class="col-sm-4">
+                    <select id="optDeparture" name="optDeparture" [(ngModel)]="departureLocation" class="form-control" 
+                        formControlName="departure" (change)="onDepartureChange()" >
+                        <option *ngFor="let loc of departureList" [value]="loc.name">
+                            {{loc.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-sm-2">To</div>
+                <div class="col-sm-4">
+                    <select id="optArrival" name="optArrival" [(ngModel)]="arrivalLocation" class="form-control"
+                        formControlName="arrival" [disabled]="!SearchForm.get('departure').valid" >
+                        <option *ngFor="let loc of arrivalList" [value]="loc.name">
+                            {{loc.name}}
+                        </option>
+                    </select>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <span class="errorMessage" *ngIf="!SearchForm.get('departure').valid && SearchForm.get('departure').touched ">Departure location is not valid.</span>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <span class="errorMessage" *ngIf="!SearchForm.get('arrival').valid && SearchForm.get('arrival').touched">Arrival location is not valid.</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">Date</div>
+                <div class="col-sm-4"><input type="date" [(ngModel)]="FlightDate" class="form-control" [min]="minDate" formControlName="date">
+                </div>
+                <div class="col-sm-2">Travellers</div>
+                <div class="col-sm-4"><input type="number" value="1" class="form-control" formControlName="travallers">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <span class="errorMessage" *ngIf="!SearchForm.get('date').valid && SearchForm.get('date').touched ">Date is not valid.</span>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <span class="errorMessage" *ngIf="!SearchForm.get('travallers').valid && SearchForm.get('travallers').touched ">Number of travellers is not valid.</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8"></div>
+                <div class="col-sm-4">
+                    <input type="submit" [disabled]="!(SearchForm.valid && SearchForm.touched)" value="Search" class="btn btn-primary">
+                    <input type="button" value="Reset" class="btn btn-danger" (click)=btnReset()>
+                </div>
+            </div>
+
+        </div>
+</form>

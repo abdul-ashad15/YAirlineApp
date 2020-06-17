@@ -1,0 +1,140 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <input type="button" value="Back To Search Flight" class="btn btn-primary" (click)="backToSearchFlight()">
+        </div>
+    </div>
+    <div class="row" *ngFor="let psg of flightDetails.travellerList">
+        <div class="col-sm-12">
+            <div class="container brdr">
+
+                <!-- "id": element.id,
+            "FirstName": element.FirstName,
+            "Surname": element.Surname,
+            "Email": element.Email,
+            "ContactNo": element.ContactNo,
+            "Gender": element.Gender,
+            "BirthDate": element.BirthDate,
+            "WhileChair": element.WhileChair,
+            "Seat": element.Seat,
+            "FlightCode": element.FlightCode -->
+
+                <!-- <table> -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Boarding Pass</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <strong>Name</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>Seat</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>FF No.</strong>
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>FF Tier</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{psg.Gender=='Male'?'Mr.':'Mrs.'}} {{psg.FirstName}} {{psg.Surname}}
+                    </div>
+                    <div class="col-sm-2">
+                        {{psg.Seat}}
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <strong>From</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>To</strong>
+                    </div>
+                    <div class="col-sm-2"><strong>SSR</strong>
+                    </div>
+                    <div class="col-sm-2"><strong>Flight Number</strong>
+                    </div>
+                    <div class="col-sm-2"><strong>Date</strong>
+                    </div>
+                    <div class="col-sm-2"><strong>Dept. Time</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        {{flight.OriginDestination.Origin}}
+                    </div>
+                    <div class="col-sm-2">
+                        {{flight.OriginDestination.Destination}}
+                    </div>
+                    <div class="col-sm-2">
+                    </div>
+                    <div class="col-sm-2">
+                        {{flight.FlightCode}}
+                    </div>
+                    <div class="col-sm-2">
+                        {{flight.OriginDestination.DeptDate|date:'mediumDate'}}
+                    </div>
+                    <div class="col-sm-2">
+                        {{flight.OriginDestination.DeptDate|date:'shortTime'}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <strong>Gate</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>Boarding Time</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>Class</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>PNR</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong> Seq No.</strong>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong> E-Ticket</strong>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        G5
+                    </div>
+                    <div class="col-sm-2">
+                        {{flight.OriginDestination.DeptDate|date:'shortTime'}}
+                    </div>
+                    <div class="col-sm-2">
+                        Economy
+                    </div>
+                    <div class="col-sm-2">
+                        {{flight.FlightCode}} {{psg.Seat}}
+                    </div>
+                    <div class="col-sm-2">
+                        {{flight.FlightCode}} {{psg.Seat}}
+                    </div>
+                    <div class="col-sm-2">
+                        {{flight.FlightCode}} {{psg.Seat}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

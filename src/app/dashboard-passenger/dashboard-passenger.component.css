@@ -1,0 +1,76 @@
+th{
+    background-color: lightgreen;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+}
+
+.hundredWidth{
+    width:100px;
+    text-align: center;
+}
+
+   /*td{
+  background-color: yellow; 
+}*/
+
+table{
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3{
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+input[type=button]{
+    margin-left: 5px;
+    
+}
+
+.errorMessage{
+    color:red;
+}
+
+.popup_box  
+{
+    position:fixed;
+    top: 125px;
+    left: 150px;
+    width:1100px;
+    margin-top: -5em; /*set to a negative number 1/2 of your height*/
+    margin-left: -5em; /*set to a negative number 1/2 of your width*/
+    border: 1px solid #ccc;
+    border:  2px solid black;
+    z-index:100; 
+    /* display:none; */
+    background-color:white;
+    opacity: 100%;
+}
+
+input[type=checkbox]{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.popup_box_Background
+{
+    top: 0px;
+    left: 0px;
+    width:200%;
+    height:200%;
+    background-color: black;
+    position: fixed;
+    z-index:100; 
+    margin-top: -5em; /*set to a negative number 1/2 of your height*/
+    margin-left: -5em; /*set to a negative number 1/2 of your width*/
+    opacity:50%;
+}
+
+
+  

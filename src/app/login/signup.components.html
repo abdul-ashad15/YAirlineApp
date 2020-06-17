@@ -1,0 +1,27 @@
+<!--<router-outlet></router-outlet>-->
+<div fxLayoutAlign= "center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="35">
+            <mat-toolbar color="primary">{{title}}</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+            <mat-form-field>
+              <input matInput placeholder="Username" [(ngModel)] = "loginservice.currentuser.username"  [ngModelOptions]="{standalone: true}"  >
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="E-mail" [(ngModel)] = "loginservice.currentuser.email"  [ngModelOptions]="{standalone: true}" >
+              </mat-form-field>
+              <mat-form-field>
+                <input type="password" matInput placeholder="Password" [(ngModel)] = "loginservice.currentuser.password"  [ngModelOptions]="{standalone: true}" >
+              </mat-form-field>
+            <mat-form-field >
+              <input matInput placeholder="Phone Number" [(ngModel)] = "loginservice.currentuser.phone"  [ngModelOptions]="{standalone: true}" >
+            </mat-form-field>
+            <div class="example-button-row" style="height: 4rem;display: flex; align-items: center; justify-content:center;">
+            <button mat-raised-button color="primary" type="button" (click)="signup(loginservice.currentuser)">Register</button>
+            </div>
+            <div class="example-button-row" >
+            <mat-label style="margin-right:5px;">Already sinup, Signin here</mat-label>
+            <button mat-raised-button color="primary" type="button" (click)="login()">Login</button>
+            </div>
+          </form>
+    </mat-card>
+</div>

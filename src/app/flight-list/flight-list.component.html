@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            Filter By
+        </div>
+    </div>
+    <div class="row filterRow">
+        <div class="col-sm-2">
+            Flight
+        </div>
+        <div class="col-sm-4">
+            <select id="location" name="location" [(ngModel)]="airways" (change)="AirwaysChange()" class="form-control">
+                <option *ngFor="let loc of airwaysList" [value]="loc.name">
+                    {{loc.name}}
+                </option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            Fares
+        </div>
+        <div class="col-sm-4">
+            <select id="location" name="location" [(ngModel)]="fareFilterValue"  (change)="AirwaysChange()" class="form-control">
+                <option *ngFor="let loc of fareList" [value]="loc">
+                    {{loc}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Airways</th>
+                    <th>Flight</th>
+                    <th>Departure</th>
+                    <th></th>
+                    <th>Arrival</th>
+                    <th>Fares</th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let fltDetail of flightFilteredList">
+                    <td>{{fltDetail.index}}</td>
+                    <td>{{fltDetail.Flight}}</td>
+                    <td>{{fltDetail.FlightCode}}</td>
+                    <td>{{fltDetail.OriginDestination.DeptDate|date:'shortTime'}}<br>{{fltDetail.OriginDestination.Origin}}
+                    </td>
+                    <td>TO</td>
+                    <td>{{fltDetail.OriginDestination.ArrDate|date:'shortTime'}}<br>{{fltDetail.OriginDestination.Destination}}
+                    </td>
+                    <td>{{fltDetail.FareDetails|currency:'INR':'Rs '}}</td>
+                    <td><input type="button"  value="Book Now" class="btn btn-primary" (click)="bookNow(fltDetail.FlightCode)"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

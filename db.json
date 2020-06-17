@@ -1,0 +1,414 @@
+{
+  "FlightList": [
+    {
+      "id": 1,
+      "Flight": "Indigo",
+      "FlightCode": "6E 2977",
+      "SeatsAvailable": 300,
+      "FareDetails": 30000,
+      "OriginDestination": {
+        "Origin": "NAVSARI",
+        "Destination": "DELHI",
+        "DeptDate": "19 June, 2020 04:00 AM",
+        "ArrDate": "19 June, 2020 05:00 AM"
+      }
+    },
+    {
+      "id": 2,
+      "FlightCode": "G8 119",
+      "Flight": "GoAir",
+      "SeatsAvailable": 6,
+      "OriginDestination": {
+        "Origin": "SURAT",
+        "Destination": "VADODARA",
+        "DeptDate": "19 June, 2020 02:00 AM",
+        "ArrDate": "19 June, 2020 04:00 AM"
+      },
+      "FareDetails": 7500
+    },
+    {
+      "id": 3,
+      "FlightCode": "AI 202",
+      "Flight": "Air India",
+      "SeatsAvailable": 5,
+      "OriginDestination": {
+        "Origin": "SURAT",
+        "Destination": "MUMBAI",
+        "DeptDate": "15 June, 2020 04:00 PM",
+        "ArrDate": "15 June, 2020 06:00 PM"
+      },
+      "FareDetails": 2000
+    },
+    {
+      "id": 4,
+      "FlightCode": "LF 930",
+      "Flight": "Lufthansa",
+      "SeatsAvailable": 10,
+      "OriginDestination": {
+        "Origin": "SURAT",
+        "Destination": "VADODARA",
+        "DeptDate": "19 June, 2020 09:00 PM",
+        "ArrDate": "19 June, 2020 10:00 AM"
+      },
+      "FareDetails": 9000
+    },
+    {
+      "id": 5,
+      "FlightCode": "SP 306",
+      "Flight": "SpiceJet",
+      "SeatsAvailable": 300,
+      "FareDetails": 30000,
+      "OriginDestination": {
+        "Origin": "BANGALORE",
+        "Destination": "MUMBAI",
+        "DeptDate": "22 June, 2020 04:00 AM",
+        "ArrDate": "22 June, 2020 07:00 AM"
+      }
+    }
+  ],
+  "Traveller": [
+    {
+      "id": 1,
+      "FirstName": "Ankur N",
+      "Surname": "Patel",
+      "Email": "ankur_patel@gmail.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1992-09-10",
+      "WhileChair": true,
+      "Seat": "E1",
+      "FlightCode": "F1",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "SpecialMeal": true
+    },
+    {
+      "id": 2,
+      "FirstName": "Devesh",
+      "Surname": "Patel",
+      "Email": "Devesh_Patel@gmail.com",
+      "ContactNo": "7474747474",
+      "Gender": "Male",
+      "BirthDate": "2020-12-26",
+      "WhileChair": false,
+      "Seat": "E2",
+      "FlightCode": "F1",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD"
+    },
+    {
+      "FirstName": "Paul",
+      "Surname": "Dhinakaran",
+      "Email": "paul.dhinakaran@jesuscalls.org",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1990-06-12",
+      "WhileChair": false,
+      "Seat": "C23",
+      "FlightCode": "G8 119",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 3
+    },
+    {
+      "FirstName": "Ankesh",
+      "Surname": "Gamit",
+      "Email": "ankesh.gamit@yahoo.com",
+      "ContactNo": "9913338708",
+      "Gender": "Male",
+      "BirthDate": "1991-12-26",
+      "WhileChair": false,
+      "Seat": "E14",
+      "FlightCode": "G8 119",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "FirstName": "Ratan",
+      "Surname": "Tata",
+      "Email": "jamsedhji.tata@gmail.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1990-12-12",
+      "WhileChair": true,
+      "Seat": "B26",
+      "FlightCode": "F1",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "SpecialMeal": true
+    },
+    {
+      "id": 6,
+      "FirstName": "MahipatSingh",
+      "Surname": "Vaghela",
+      "Email": "mahipat.vaghela@gmail.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1990-12-12",
+      "WhileChair": false,
+      "Seat": "B6",
+      "FlightCode": "F1",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD"
+    },
+    {
+      "FirstName": "Pragna",
+      "Surname": "Gamit",
+      "Email": "pragna.gamit@gmail.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1990-12-12",
+      "WhileChair": false,
+      "Seat": "C13",
+      "FlightCode": "G8 119",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 7
+    },
+    {
+      "FirstName": "Ankeshkumar",
+      "Surname": "Gamit",
+      "Email": "ankeshkumar.gamit@gmail.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1990-12-12",
+      "WhileChair": false,
+      "Seat": "B10",
+      "FlightCode": "G8 119",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 8
+    },
+    {
+      "FirstName": "Mahipat",
+      "Surname": "Singh",
+      "Email": "mahipat.singh@gmail.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1990-12-12",
+      "WhileChair": false,
+      "Seat": "E11",
+      "FlightCode": "G8 119",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 9
+    },
+    {
+      "FirstName": "Ankit",
+      "Surname": "Patel",
+      "Email": "ankit.patel@gmail.com",
+      "ContactNo": "3223232323",
+      "Gender": "Male",
+      "BirthDate": "1991-10-10",
+      "WhileChair": false,
+      "Seat": "C19",
+      "FlightCode": "G8 119",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 10
+    },
+    {
+      "FirstName": "Raghav",
+      "Surname": "Kunj",
+      "Email": "raghav.kunj@gmail.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1992-01-02",
+      "WhileChair": false,
+      "Seat": "A21",
+      "FlightCode": "G8 119",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 11
+    },
+    {
+      "FirstName": "Manjit",
+      "Surname": "Tomar",
+      "Email": "manjit.Tomar@gmail.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1990-12-12",
+      "WhileChair": false,
+      "Seat": "C6",
+      "FlightCode": "LF 930",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 12
+    },
+    {
+      "FirstName": "Sonia",
+      "Surname": "Gandhi",
+      "Email": "sonia.gandhi@gmail.com",
+      "ContactNo": "4848483848",
+      "Gender": "Female",
+      "BirthDate": "",
+      "WhileChair": false,
+      "Seat": "E4",
+      "FlightCode": "LF 930",
+      "Address": "Varacha Surat opp sachin railway station",
+      "Passport": "123634SD",
+      "id": 13
+    },
+    {
+      "FirstName": "Rahul",
+      "Surname": "Bajaj",
+      "Email": "rahul.bajaj@gmail.com",
+      "ContactNo": "4848484433",
+      "Gender": "Male",
+      "BirthDate": "1990-12-12",
+      "WhileChair": false,
+      "Seat": "F10",
+      "FlightCode": "LF 930",
+      "Address": "Varacha Surat opp sachin railway station",
+      "id": 14
+    },
+    {
+      "FirstName": "Navin",
+      "Surname": "Patel",
+      "Email": "navin@patel.com",
+      "ContactNo": "1212121212",
+      "Gender": "Male",
+      "BirthDate": "1990-12-12",
+      "WhileChair": false,
+      "Seat": "B11",
+      "FlightCode": "LF 930",
+      "Passport": "123634SD",
+      "id": 15
+    },
+    {
+      "id": 16,
+      "FirstName": "Chintan",
+      "Surname": "Sutariya",
+      "Email": "chintan.sutaria@gmail.com",
+      "ContactNo": "9913338708",
+      "Gender": "Female",
+      "BirthDate": "1990-12-12",
+      "WhileChair": true,
+      "Seat": "C14",
+      "FlightCode": "F1",
+      "Address": "Junagadh Rajkot Gujarat India",
+      "Passport": "ASDFVF",
+      "SpecialMeal": true
+    },
+    {
+      "FirstName": "amitabh",
+      "Surname": "bacchan",
+      "Email": "amitabh@bachhan",
+      "ContactNo": "0987654321",
+      "Gender": "Male",
+      "BirthDate": "2008-01-29",
+      "WhileChair": true,
+      "Seat": "B2",
+      "FlightCode": "G8 119",
+      "Address": "andheri mumbai india asia ",
+      "Passport": "987654321",
+      "SpecialMeal": true,
+      "id": 17
+    },
+    {
+      "FirstName": "mohan",
+      "Surname": "patel",
+      "Email": "mohan@patel",
+      "ContactNo": "1234567890",
+      "Gender": "Male",
+      "BirthDate": "2020-12-12",
+      "WhileChair": true,
+      "Seat": "D4",
+      "FlightCode": "G8 119",
+      "Address": "surat ahmedabad gujarat india asia",
+      "Passport": "123456789",
+      "SpecialMeal": true,
+      "id": 18
+    }
+  ],
+  "Locations": [
+    {
+      "id": 1,
+      "code": "BLR",
+      "name": "BANGALORE"
+    },
+    {
+      "id": 2,
+      "code": "BOM",
+      "name": "MUMBAI"
+    },
+    {
+      "id": 3,
+      "code": "DEL",
+      "name": "DELHI"
+    },
+    {
+      "id": 4,
+      "code": "SRT",
+      "name": "SURAT"
+    },
+    {
+      "id": 5,
+      "code": "BRD",
+      "name": "VADODARA"
+    },
+    {
+      "id": 6,
+      "code": "HYD",
+      "name": "HYDERABAD"
+    },
+    {
+      "id": 7,
+      "code": "BHU",
+      "name": "BHUBANESWAR"
+    },
+    {
+      "id": 8,
+      "code": "JLG",
+      "name": "JALGAON"
+    },
+    {
+      "id": 9,
+      "code": "GOI",
+      "name": "GOA"
+    },
+    {
+      "id": 10,
+      "code": "CCU",
+      "name": "KOLKATA"
+    }
+  ],
+  "Airlines": [
+    {
+      "id": 1,
+      "name": "Air India"
+    },
+    {
+      "id": 2,
+      "name": "Lufthansa"
+    },
+    {
+      "id": 3,
+      "name": "JetAirways"
+    },
+    {
+      "id": 4,
+      "name": "GoAir"
+    },
+    {
+      "id": 5,
+      "name": "Indigo"
+    },
+    {
+      "id": 6,
+      "name": "SpiceJet"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

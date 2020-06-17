@@ -1,0 +1,317 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Passenger List</h3>
+<hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            Passport
+        </div>
+        <div class="col-sm-2">
+            <input type="text" value="" class="form-Control" [(ngModel)]="passport" (change)='filterRecord()'>
+        </div>
+        <div class="col-sm-2">
+            Address
+        </div>
+        <div class="col-sm-2">
+            <input type="text" value="" class="form-Control" [(ngModel)]='address' (change)='filterRecord()'>
+        </div>
+        <div class="col-sm-2">
+            Date of Birth
+        </div>
+        <div class="col-sm-2">
+            <input type="date" value="" class="form-Control" [(ngModel)]='birthDate' (change)='filterRecord()'>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            Missing Passport
+        </div>
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]='chkPassport' >
+        </div>
+        <div class="col-sm-2">
+            Missing Address
+        </div>
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]='chkAdress' >
+        </div>
+        <div class="col-sm-2">
+            Missing Date of Birth
+        </div>
+        <div class="col-sm-2">
+            <input type="checkbox" [(ngModel)]='chkDateOfBirth' >
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th class="hundredWidth">
+                        Flight<br>
+                        Seat
+                    </th>
+                    <th>
+                        Ancilliary Serv.
+                    </th>
+                    <th>
+                        ContactNo
+                    </th>
+                    <th>
+                        Passport
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th class="hundredWidth">
+                        BirthDate
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                </tr>
+
+                <tr *ngFor="let psg of travellersList | travellersFilter:passport:address:birthDate:chkPassport:chkAdress:chkDateOfBirth" >
+                    <td>
+                        <input type="button" value="Edit" class="btn btn-primary" (click)="onUpdateClick(psg.id)" />
+                    </td>
+                    <td>
+                        {{psg.FirstName}}<br>{{psg.Surname}}
+                    </td>
+                    <td class="hundredWidth">
+                        {{psg.FlightCode}}<br>{{psg.Seat}}
+                    </td>
+                    <td>
+                        {{psg.WhileChair?'Required':'Not Required'}}
+                    </td>
+                    <td>
+                        {{psg.ContactNo}}
+                    </td>
+                    <td>
+                        {{psg.Passport}}
+                    </td>
+                    <td>
+                        {{psg.Email}}
+                    </td>
+                    <td class="hundredWidth">
+                        {{psg.BirthDate}}
+                    </td>
+                    <td>
+                        {{psg.Address}}
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="popup_box_Background" *ngIf="ShowPopup" ></div>  
+
+<div class="popup_box" *ngIf="ShowPopup" >
+    <div class="container">
+          <form [formGroup]="TravellersForm" (ngSubmit)="onSubmit()">
+            <div class="form-group" >
+                <div class="row">
+<div class="col-sm-2"><strong>Traveller</strong></div>
+                </div>
+                <hr>
+                
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    First Name
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtFirstName" class="form-control"
+                                        formControlName="FirstName" [(ngModel)]='EditFirstName' >
+                                </div>
+                                <div class="col-sm-2">
+                                    Surname
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtSurname" class="form-control" 
+                                    formControlName="Surname" [(ngModel)]='EditSurname' >
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!TravellersForm.get('FirstName').valid && TravellersForm.get('FirstName').touched">
+                                        <span class="errorMessage">First Name is not valid</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!TravellersForm.get('Surname').valid && TravellersForm.get('Surname').touched">
+                                        <span class="errorMessage">Surname is not valid</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    Address
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtAddress" class="form-control" 
+                                    formControlName="Address" [(ngModel)]='EditAddress'>
+                                </div>
+                                <div class="col-sm-2">
+                                    Passport
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtPassport" class="form-control" 
+                                    formControlName="Passport" [(ngModel)]='EditPassport'>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!TravellersForm.get('Address').valid && TravellersForm.get('Address').touched">
+                                        <span class="errorMessage">Address is not valid<br>Minimum length must be of 25
+                                            letters </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!TravellersForm.get('Passport').valid && TravellersForm.get('Passport').touched">
+                                        <span class="errorMessage">Passport is not valid</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    Email
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtEmail" class="form-control" 
+                                    formControlName="Email" [(ngModel)]='EditEmail'>
+                                </div>
+                                <div class="col-sm-2">
+                                    Contact No
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" id="txtContact" class="form-control" 
+                                    formControlName="ContactNo" [(ngModel)]='EditContactNo'>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!TravellersForm.get('Email').valid && TravellersForm.get('Email').touched">
+                                        <span class="errorMessage">Email is not valid</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!TravellersForm.get('ContactNo').valid && TravellersForm.get('ContactNo').touched">
+                                        <span class="errorMessage">Contact number is not valid</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2">Seat</div>
+                                <div class="col-sm-4">
+                                    <input type="text" disabled id="txtContact" class="form-control"
+                                        formControlName="Seat"  [(ngModel)]='EditSeat'>
+                                </div>
+                                <div class="col-sm-2">
+                                    Birth Date
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="date" id="txtBirthDate" class="form-control"
+                                        formControlName="BirthDate" [max]="maxDate"  [(ngModel)]='EditBirthDate'>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-4">
+                                    <div *ngIf="!TravellersForm.get('BirthDate').valid && TravellersForm.get('BirthDate').touched">
+                                        <span class="errorMessage">Birth date is not valid</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    Gender
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="radio" *ngFor="let optGender of genders" >
+                                        <label>
+                                            <input type="radio" formControlName="Gender"  [value]="optGender" [(ngModel)]="EditGender">
+                                            {{optGender}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <hr>
+                                </div>
+                                <div class="col-sm-2">
+                                  <strong>Ancilliary Service</strong>
+                                </div>
+                                <div class="col-sm-3">
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    Special Meal
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="checkbox" class="checkbox" 
+                                    formControlName="SpecialMeal" [(ngModel)]='EditSpecialMeal'> Required
+                                </div>
+                                <div class="col-sm-2">
+                                    WhileChair
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="checkbox" class="checkbox" 
+                                    formControlName="WhileChair" [(ngModel)]='EditWhileChair' > Required
+                                </div>
+
+                            </div>
+
+            </div>
+        <div class="row">
+            <div class="col-sm-9"></div>
+            <div class="col-sm-3">
+                <input type="submit" [disabled]="!(TravellersForm.valid && TravellersForm.touched)" id="btnSubmit"
+                    value="Update" class="btn btn-primary"> 
+                <input type="button"  id="btnReset" value="Reset" class="btn btn-success" (click)='onReset()'>
+                <input type="button"  id="btnCancel" value="Cancel" class="btn btn-danger" (click)='onCancel()'>
+            </div>
+        </div>
+    </form>
+
+
+    </div>
+</div>  
+
