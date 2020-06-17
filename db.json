@@ -408,6 +408,170 @@
       "postId": 1
     }
   ],
+  "Ancillaries": [
+    {
+      "id": 1001,
+      "flight": "Indigo1",
+      "meals": "Veg",
+      "shoppingitems": "Dress"
+    },
+    {
+      "id": 1002,
+      "flight": "Vistara",
+      "meals": "Veg",
+      "shoppingitems": "Dress"
+    },
+    {
+      "id": 1003,
+      "flight": "Air India",
+      "meals": "Veg",
+      "shoppingitems": "Dress"
+    },
+    {
+      "id": 1004,
+      "flight": "Air Asia",
+      "meals": "non-veg",
+      "shoppingitems": "Ludo"
+    }
+  ],
+  "InflightDetails": [
+    {
+      "id": 1001,
+      "flight": "Indigo1",
+      "meals": "Special",
+      "shoppingitems": "Dress",
+      "seatnumber": "S15"
+    },
+    {
+      "id": 1002,
+      "flight": "Vistara",
+      "meals": "Veg",
+      "shoppingitems": "Dress",
+      "seatnumber": "S16"
+    },
+    {
+      "id": 1003,
+      "flight": "Air India",
+      "meals": "Veg",
+      "shoppingitems": "Dress",
+      "seatnumber": "S17"
+    },
+    {
+      "id": 1004,
+      "flight": "Air Asia",
+      "meals": "non-veg",
+      "shoppingitems": "Ludo",
+      "seatnumber": "S18"
+    }
+  ],
+"Passengers": [
+    {
+      "id": 1001,
+      "username": "PS101",
+      "name": "Passenger1",
+      "age": "35",
+      "dateOfBirth": "25/06/1987",
+      "gender": "Male",
+      "passoprt": "M2673633",
+      "address": "Bangalore",
+      "seatnumber": "M15"
+    },
+    {
+      "id": 1002,
+      "username": "PS102",
+      "name": "Passenger2",
+      "age": 40,
+      "dateOfBirth": "25/06/1980",
+      "gender": "Male",
+      "passoprt": "M2673633",
+      "address": "Bangalore",
+      "seatnumber": "M16"
+    },
+    {
+      "id": 1003,
+      "username": "PS103",
+      "name": "Passenger3",
+      "age": 30,
+      "dateOfBirth": "25/06/1987",
+      "gender": "Male",
+      "passoprt": "M2673633",
+      "address": "Bangalore",
+      "seatnumber": "M17"
+    },
+    {
+      "id": 1004,
+      "username": "PS104",
+      "name": "Passenger4",
+      "age": "50",
+      "dateOfBirth": "25/06/1989",
+      "gender": "Male",
+      "passoprt": "M2673633",
+      "address": "Bangalore",
+      "seatnumber": "M18"
+    },
+    {
+      "id": 1005,
+      "username": "PS105",
+      "name": "Passenger5",
+      "age": "1",
+      "dateOfBirth": "25/03/2018",
+      "gender": "Female",
+      "passoprt": "M2673635",
+      "address": "Bangalore",
+      "seatnumber": "M19"
+    },
+    {
+      "id": 1006,
+      "username": "A",
+      "name": "Passenger6",
+      "age": "12",
+      "dateOfBirth": "",
+      "gender": "male",
+      "passoprt": "",
+      "address": "",
+      "seatnumber": "M20"
+    }
+  ],
+  "Users": [
+      {
+        "id": 1001,
+        "username": "admin",
+        "password": "admin",
+        "firstName": "System",
+        "lastName": "Administrator",
+        "role": "Admin",
+        "token": ""
+      },
+      {
+        "id": 1002,
+        "username": "user",
+        "password": "user",
+        "firstName": "Test",
+        "lastName": "User",
+        "role": "User",
+        "token": ""
+      },
+      {
+      "id": 1003,
+      "username": "testuser",
+      "password": "Livekey@2020",
+      "email": "abc@gmail.com",
+      "phone": "8123701213",
+      "firstName": "",
+      "lastName": "",
+      "role": "User"
+    },
+    {
+      "id": 1004,
+      "username": "username2",
+      "password": "Livekey@2020",
+      "email": "abdul.ashad1@gmail.com",
+      "phone": "9876546578",
+      "firstName": "",
+      "lastName": "",
+      "role": "User"
+    }
+    ],
   "profile": {
     "name": "typicode"
   }

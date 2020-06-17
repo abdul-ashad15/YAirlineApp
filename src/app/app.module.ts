@@ -28,7 +28,7 @@ import { AncillaryService } from './ancillary-services/ancillary.service';
 import { Ancillarlistservices } from './ancillary-services/ancillary-listservices.component';
 import { FilterPipe } from './passenger-details/filterPipe';
 import { SignupComponent } from './login/signup.components';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+//import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import { InFlightCreate } from './Inflight/inflightcreate.component';
 import { InFlightList } from './Inflight/inflightlist.component';
@@ -56,7 +56,7 @@ import { TravellersFilterPipe } from './travellers-filter.pipe';
     SafeHtmlPipe,
     TravellerListComponent,
     FlightTicketComponent,
-    DashboardPassengerComponent,
+    //DashboardPassengerComponent,
     TravellersFilterPipe
   ],
   imports: [
@@ -72,15 +72,14 @@ import { TravellersFilterPipe } from './travellers-filter.pipe';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
-    MatDatepickerModule,
+    //MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDatepickerModule,
     MatRadioModule,
     MatSelectModule
   ],
-  providers: [PassengerService,LoginService,NavbarService,AncillaryService,MatDatepickerModule,InFlightService],
-  //bootstrap: [AppComponent]
+  providers: [PassengerService,LoginService,NavbarService,AncillaryService,InFlightService],
+  //MatDatepickerModule,
   bootstrap:[AppComponent]
 })
 export class AppModule { }

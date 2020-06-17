@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { TravellersOperationService } from '../services/travellers-operation.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-dashboard-passenger',
   templateUrl: './dashboard-passenger.component.html',
   styleUrls: ['./dashboard-passenger.component.css']
 })
 
-export class DashboardPassengerComponent implements OnInit {
+export class DashboardPassengerComponent implements OnInit{
   traveller: any = null;
   travellersList: any[] = [];
   passport: string = '';
@@ -26,6 +27,22 @@ export class DashboardPassengerComponent implements OnInit {
   chkPassport:boolean=false;
   chkAdress:boolean=false;
   chkDateOfBirth:boolean=false;
+
+  Id : number = 0;
+  FirstName : string = '';
+  Surname : string = '';
+  Email : string = '';
+  ContactNo : string = '';
+  Gender : string = 'Male';
+  BirthDate: string = '';
+  WheelChair :string = '';
+  Seat : string = '';
+  FlightCode : string = '';
+  Address : string = '';
+  Passport : string = '';
+  SpecialMeal : string = '';
+
+//  travelerdetails : Travelerdetails = new Travelerdetails();
 
   Editid: number = 0;
   EditFirstName: string = '';
@@ -45,22 +62,23 @@ export class DashboardPassengerComponent implements OnInit {
   constructor(private travellersOperationService: TravellersOperationService) { }
 
   ngOnInit(): void {
+    debugger;
 
     this.UpdateTravellersList();
 
     this.TravellersForm = new FormGroup({
-      'FirstName': new FormControl(null, [Validators.required]),
-      'Surname': new FormControl(null, Validators.required),
-      'Email': new FormControl(null, [Validators.required, Validators.email]),
-      'ContactNo': new FormControl(null, [Validators.required, Validators.maxLength(15), Validators.minLength(10)]),
-      'Gender': new FormControl('Male'),
-      'BirthDate': new FormControl(null, Validators.required),
-      'Seat': new FormControl('F1'),
-      'FlightCode': new FormControl('F1'),
-      "Address": new FormControl(null, [Validators.required, Validators.minLength(25)]),
-      "Passport": new FormControl(null, [Validators.required]),
-      'WhileChair': new FormControl(false),
-      "SpecialMeal": new FormControl(false)
+      FirstName : new FormControl(null, [Validators.required]),
+      Surname : new FormControl(null, Validators.required),
+      Email : new FormControl(null, [Validators.required, Validators.email]),
+      ContactNo : new FormControl(null, [Validators.required, Validators.maxLength(15), Validators.minLength(10)]),
+      Gender: new FormControl('Male'),
+      BirthDate : new FormControl(null, Validators.required),
+      Seat: new FormControl('F1'),
+      FlightCode: new FormControl('F1'),
+      Address: new FormControl(null, [Validators.required, Validators.minLength(25)]),
+      Passport: new FormControl(null, [Validators.required]),
+      WheelChair: new FormControl(false),
+      SpecialMeal: new FormControl(false)
     });
   }
 
@@ -89,11 +107,12 @@ export class DashboardPassengerComponent implements OnInit {
   }
 
   onUpdateClick(id: number) {
+    debugger;
     console.log(id);
     this.Editid = id;
 
     this.travellersOperationService.getById(id)
-      .subscribe((Edttraveller) => {
+      .subscribe((Edttraveller : any) => {
 
         this.EditFirstName = Edttraveller.FirstName;
         this.EditSurname = Edttraveller.Surname;
@@ -134,19 +153,19 @@ export class DashboardPassengerComponent implements OnInit {
     var element = this.TravellersForm.value;
 
     this.travellersOperationService.push({
-      "id": this.Editid,
-      "FirstName": element.FirstName,
-      "Surname": element.Surname,
-      "Email": element.Email,
-      "ContactNo": element.ContactNo,
-      "Gender": element.Gender,
-      "BirthDate": element.BirthDate,
-      "WhileChair": element.WhileChair,
-      "Seat": element.Seat,
-      "FlightCode": element.FlightCode,
-      "Address": element.Address,
-      "Passport": element.Passport,
-      "SpecialMeal": element.SpecialMeal,
+      Id : this.Editid,
+      FirstName : element.FirstName,
+      Surname: element.Surname,
+      Email: element.Email,
+      ContactNo: element.ContactNo,
+      Gender: element.Gender,
+      BirthDate: element.BirthDate,
+      WheelChair: element.WhileChair,
+      Seat: element.Seat,
+      FlightCode: element.FlightCode,
+      Address: element.Address,
+      Passport: element.Passport,
+      SpecialMeal: element.SpecialMeal,
     })
       .subscribe(() => {
         console.log('Record inserted.');
@@ -160,7 +179,19 @@ this.ShowPopup=false;
   }
 }
 
-export class travelerdetails
+/*export class Travelerdetails
 {
-  
-}
+  id : string;
+  FirstName : string;
+  Surname : string;
+  Email : string;
+  ContactNo : string;
+  Gender : string;
+  BirthDate: string;
+  WhileChair :string;
+  Seat : string;
+  FlightCode : string;
+  Address : string;
+  Passport : string;
+  SpecialMeal : string;
+}*/

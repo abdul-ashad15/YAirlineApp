@@ -20,7 +20,7 @@ import { FlightTicketComponent } from './flight-ticket/flight-ticket.component';
 import { DashboardPassengerComponent } from './dashboard-passenger/dashboard-passenger.component';
 
 export const routes: Routes = [
-  { path: '',component: PageNotFoundComponent,pathMatch: 'full'},
+  { path: '',component: DashboardPassengerComponent,pathMatch: 'full'},
   //{ path: 'DashboardPassenger',component: DashboardPassengerComponent,pathMatch: 'full'},
   //{ path: '',   redirectTo: '/first-component', pathMatch: 'full' },
   /*{path:'checkin',component:CheckinComponent},

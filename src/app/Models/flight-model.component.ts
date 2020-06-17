@@ -11,6 +11,7 @@ export interface IOriginDestination
 
 export interface IFlightList  {
   id: number;
+  index:number;
   FlightCode: string;
   Flight:string;
   SeatsAvailable: number;
@@ -21,6 +22,7 @@ export interface IFlightList  {
 
 export class FlightList implements IFlightList  {
   id: number;
+  index:number;
   FlightCode: string;
   Flight:string;
   SeatsAvailable: number;
